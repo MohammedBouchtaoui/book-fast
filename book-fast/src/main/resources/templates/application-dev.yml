@@ -1,12 +1,12 @@
-pring:
+spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/book_fast
     username: username
     password: password
-    driver-class-name: org.postgresql.Driver
+    driver-class-name: org.postgresql.Driver # gerer par defaut par spring
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update # chn bghit ndir fach nstarter app
     show-sql: false
     properties:
       hibernate:
@@ -23,19 +23,8 @@ pring:
         smtp:
           trust: "*"
         auth: true
-        starttls:
+        starttls:  #niveau de securite
           enabled: true
-        connectiontimeout: 5000
+        connectiontimeout: 5000  #5sec
         timeout: 3000
         writetimeout: 5000
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: "http://localhost:9090/realms/book-fast"
-application:
-  file:
-    uploads:
-      photos-output-path: ./uploads
-server:
-  port: 8088

@@ -23,8 +23,8 @@ services:
     container_name: mail-dev-bf
     image: maildev/maildev
     ports:
-      - "1080:1080"
-      - "1025:1025"
+      - "1080:1080"  # port d'ffichage d'appp web
+      - "1025:1025"  # port que nous devons utilser dns notre appli
     networks:
       - spring-fast
 
